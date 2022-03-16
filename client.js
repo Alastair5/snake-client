@@ -14,6 +14,14 @@ const connect = function() {
   conn.on('connect', () => {
     conn.write('Name: AJG');
   });
+
+  // conn.on('connect', () => {
+  //   setInterval(() => {
+  //     conn.write('Move: up');
+  //   }, 100);
+  // });
+
+
   // interpret incoming data as text
   conn.setEncoding("utf8");
 
