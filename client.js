@@ -7,9 +7,8 @@ const connect = function() {
     port: 50541
   });
 
-  conn.on('data', (data) => {
-    console.log("The Server says: ", data);
-  });
+
+  conn.setEncoding("utf8");
 
   conn.on('connect', () => {
     conn.write('Name: AJG');
@@ -18,16 +17,13 @@ const connect = function() {
   // conn.on('connect', () => {
   //   setInterval(() => {
   //     conn.write('Move: up');
-  //   }, 100);
+  //   }, 200);
   // });
 
-
   // interpret incoming data as text
-  conn.setEncoding("utf8");
 
   return conn;
 };
-console.log("Connecting ...");
-connect();
+// console.log("Connecting ...");
 
-module.expots = {connect};
+module.exports = {connect};
